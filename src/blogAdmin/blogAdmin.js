@@ -1,0 +1,28 @@
+import Vue from "vue";
+import blogAdminApp from "./blogAdminApp.vue";
+import router from "./router/blogAdmin";
+// import store from "./store";
+import "../registerServiceWorker";
+import ElementUI from "element-ui";
+import "lib-flexible";
+import "element-ui/lib/theme-chalk/index.css";
+import "../assets/css/normalize.css";
+import "../assets/font/font.css";
+
+// import "./util/test";
+// import "./registerComponent";
+
+import mavonEditor from "mavon-editor";
+import "mavon-editor/dist/css/index.css";
+
+// use
+
+Vue.use(mavonEditor);
+Vue.use(ElementUI);
+
+Vue.config.productionTip = false;
+new Vue({
+  router,
+  // store,
+  render: h => h(blogAdminApp)
+}).$mount("#blog-admin");

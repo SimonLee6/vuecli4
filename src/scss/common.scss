@@ -1,0 +1,149 @@
+i, span {
+  display: inline-block;
+}
+p {
+  margin: 10px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.blog-title-img {
+  @include wh(100%, 500px);
+}
+html {
+  // @include wh(100%, 100%);
+  font-size: 12px;
+}
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 15px;
+  }
+}
+body.app {
+  @include wh(100%, 100%);
+  // min-width: 500px;
+  min-height: 900px;
+  @include bg-max($blog-bg);
+  background-position: 0 0;
+  // background-size: no-repeat center top;
+  background-attachment: fixed;
+}
+// element-ui默认样式
+.btn-default {
+  // @include wh(auto, 30px);
+  padding: 8px 15px;
+}
+.el-select,
+.el-input,
+.el-input__inner {
+  height: 30px !important;
+  line-height: 30px;
+}
+
+
+.blog-type-title {
+  position: relative;
+  @include wh(100%, 400px);
+  img {
+    display: inline-block;
+    @include wh(100%, 100%);
+    background: transparent;
+  }
+  .blog-type-content {
+    position: absolute;
+    top: 0;
+    @include wh(100%, 100%);
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+.translateY-50 {
+  transform: translateY(-50px);
+}
+.blog-tag {
+  @include wh(auto, 20px);
+  line-height: 22px;
+  background: #fff;
+  color: $blog-tag-color;
+  // border-color: $blog-tag-color;
+  border: 0;
+}
+
+
+// 博客后台管理
+.v-note-show {
+  p {
+    margin: 0;
+    img {
+      @include wh(100%, 500px);
+      margin-bottom: 5px;
+    }
+  }
+  code {
+    display: inline-block;
+    @include wh(100%, auto);
+    // background: rgba(0, 0, 0, 0.6);
+    line-height: 25px;
+    font-size: 15px;
+  }
+}
+.hljs {
+  background: rgba(0, 0, 0, 0.8);
+  line-height: 25px;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 20px;
+
+}
+
+
+// 后台管理系统
+.admin-aside {
+  background: rgba(0, 0, 0, 0.8);
+}
+.add-blog-popover {
+  height: 200px;
+  .add-title {
+    color: #333;
+  }
+  .blog-type {
+    .el-tag {
+      margin: 10px;
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 25px;
+    left: 55%;
+    transform: translateX(-50%);
+  }
+}
+.add-blog-pic {
+  .pic-info {
+    .pic-wrap {
+      position: relative;
+      i {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+      .pic-mask {
+        cursor: pointer;
+        @include wh(240px, 135px);
+        background: hsla(0, 0%, 87.1%, .6);
+        text-align: center;
+        line-height: 135px;
+        @include font(17px, rgba(51, 51, 51, 0.4), normal);
+        .blog-pic {
+          @include wh(100%, 100%);
+        }
+        
+      }
+      i.el-icon-delete {
+        cursor: pointer;
+        @include font(18px, #fff, normal);
+      }
+    }
+  }
+}
